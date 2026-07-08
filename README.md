@@ -1,3 +1,10 @@
+---
+title: CORA
+app_file: app.py
+sdk: gradio
+sdk_version: 6.19.0
+---
+
 # CORA - Cognitive Omnitask Reasoning Assistant
 
 > An AI productivity suite for reasoning across chat, documents, images, code, and study material.
