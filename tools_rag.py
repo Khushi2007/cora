@@ -1,5 +1,4 @@
 import os
-import gradio as gr
 
 from langchain_core.tools import tool
 from langchain_community.document_loaders import PyPDFLoader
@@ -48,13 +47,17 @@ vectorstore = Chroma(
 uploaded_documents = []
 
 
+def noop_progress(value, desc=None):
+    return None
+
+
 # ==================================================
 # Index Documents
 # ==================================================
 
 def index_documents(
     pdf_paths: list[str],
-    progress=gr.Progress()
+    progress=noop_progress
 ) -> str:
     """
     Clears the existing Chroma collection and indexes

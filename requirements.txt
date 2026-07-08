@@ -1,13 +1,14 @@
 ﻿chromadb
-duckduckgo-search
 ddgs
-gradio
+groq
+streamlit
 langchain
 langchain-community
 langchain-core
 langchain-groq
 langchain-huggingface
 langchain-chroma
+langchain-text-splitters
 langgraph
 pypdf
 pypdfium2

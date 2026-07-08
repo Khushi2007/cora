@@ -1,8 +1,7 @@
 ---
 title: CORA
-app_file: app.py
-sdk: gradio
-sdk_version: 6.19.0
+app_file: streamlit_app.py
+sdk: streamlit
 ---
 
 # CORA - Cognitive Omnitask Reasoning Assistant
@@ -31,7 +30,7 @@ The solution should:
 - Support intelligent multi-tool reasoning across document search, web search, and image understanding.
 - Display a real reasoning trace generated from the agent's execution.
 - Provide dedicated workspaces for Hybrid Chat, Document Q&A, and Image Studio.
-- Be deployed as a live multi-tab Gradio application with secure API key management.
+- Be deployed as a live multi-tab Streamlit application with secure API key management.
 
 ### Beyond the Problem Statement
 
@@ -170,10 +169,10 @@ Study Buddy also supports Markdown and LaTeX rendering for mathematical and scie
 ```text
 CORA
 |
-|-- app.py
-|   |-- Gradio UI
+|-- streamlit_app.py
+|   |-- Streamlit UI
 |   |-- Workspace tabs
-|   |-- Event handlers
+|   |-- Session state
 |   `-- UI wiring
 |
 |-- agent.py
@@ -207,6 +206,8 @@ CORA
 |   |-- Code explanation prompt
 |   |-- Debugging prompt
 |   |-- Optimization prompt
+|   |-- Complexity analysis prompt
+|   |-- Language conversion prompt
 |   |-- Code generation prompt
 |   `-- Test generation prompt
 |
@@ -231,8 +232,8 @@ CORA
 
 ### Frontend / UI
 
-- Gradio
-- Gradio themes and custom CSS
+- Streamlit
+- Streamlit chat, tabs, uploaders, expanders, and session state
 - Markdown rendering
 - LaTeX rendering for study outputs
 
@@ -308,13 +309,13 @@ GROQ_API_KEY=your_groq_api_key_here
 ### 6. Run the Application
 
 ```bash
-python app.py
+streamlit run streamlit_app.py
 ```
 
 The app will start locally, usually at:
 
 ```text
-http://127.0.0.1:7860
+http://localhost:8501
 ```
 
 ---
@@ -327,7 +328,7 @@ Use Hybrid Chat for general reasoning tasks. CORA can combine conversation memor
 
 ### Document QA
 
-Upload PDFs in the Document QA tab. CORA indexes the documents into ChromaDB and allows the Hybrid Chat agent to retrieve relevant document sections.
+Upload PDFs in the Document QA tab. CORA indexes the documents into ChromaDB, supports direct document questions, and allows the Hybrid Chat agent to retrieve relevant document sections.
 
 ### Image Studio
 
@@ -351,7 +352,7 @@ Choose a study task, enter a topic or notes, optionally upload PDFs or images, a
 - Very long documents may exceed model context limits after extraction and may need summarization or chunking improvements in future versions.
 - The Hybrid Chat agent and Document QA share document indexing state, so clearing documents removes the currently searchable PDF set.
 - Mathematical formatting depends on the model emitting valid LaTeX.
-- The app currently runs as a local Gradio application and does not include authentication, user accounts, or multi-user document isolation.
+- The app currently runs as a local Streamlit application and does not include authentication, user accounts, or multi-user document isolation.
 - API rate limits from Groq or HuggingFace may affect availability during heavy usage.
 
 ---
@@ -373,7 +374,7 @@ Choose a study task, enter a topic or notes, optionally upload PDFs or images, a
 
 Built using:
 
-- Gradio
+- Streamlit
 - LangChain
 - LangGraph
 - Groq

@@ -2,7 +2,6 @@ import os
 import tempfile
 from pathlib import Path
 
-import gradio as gr
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.messages import HumanMessage, SystemMessage
@@ -75,6 +74,10 @@ IMAGE_EXTENSIONS = {
 }
 
 
+def noop_progress(value, desc=None):
+    return None
+
+
 def _file_path(file_obj) -> str:
     if isinstance(file_obj, str):
         return file_obj
@@ -144,7 +147,7 @@ def _extract_text_from_images(paths: list[str], source_label: str) -> str:
     return f"### Visual extraction from {source_label}\n\n{extracted}".strip()
 
 
-def _extract_study_material(uploaded_files, progress=gr.Progress()) -> str:
+def _extract_study_material(uploaded_files, progress=noop_progress) -> str:
     if not uploaded_files:
         return ""
 
@@ -207,7 +210,7 @@ def run_study_task(
     task: str,
     text_input: str,
     uploaded_files,
-    progress=gr.Progress(),
+    progress=noop_progress,
 ) -> str:
     """
     Runs a focused Study Buddy workflow over typed input and uploaded study material.
