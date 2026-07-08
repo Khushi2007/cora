@@ -1,0 +1,16 @@
+﻿chromadb
+duckduckgo-search
+ddgs
+gradio
+langchain
+langchain-community
+langchain-core
+langchain-groq
+langchain-huggingface
+langchain-chroma
+langgraph
+pypdf
+pypdfium2
+python-dotenv
+sentence-transformers
+wikipedia
