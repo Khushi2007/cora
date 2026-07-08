@@ -358,6 +358,14 @@ Choose a study task, enter a topic or notes, optionally upload PDFs or images, a
 
 ---
 
+## Video Demo
+
+**Video Demo Google Drive URL**
+
+https://drive.google.com/file/d/19qJffpPoFB4ABaO4bwWM9c8FzBqewH9m/view?usp=sharing
+
+---
+
 ## Known Limitations
 
 - The application depends on external LLM APIs, so internet access and a valid `GROQ_API_KEY` are required.
