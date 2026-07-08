@@ -12,7 +12,7 @@ sdk: streamlit
 
 **Live Demo URL:**
 
-<!-- Add live demo URL here -->
+https://twinturingscora.streamlit.app/
 
 ---
 
@@ -341,6 +341,20 @@ Choose a language, select a developer task, paste code or describe what you want
 ### Study Buddy
 
 Choose a study task, enter a topic or notes, optionally upload PDFs or images, and generate structured learning material.
+
+---
+
+## Screenshots
+
+![Hybrid Chat Tab](screenshots/image1.png)
+
+![Hybrid Chat Tab](screenshots/image2.png)
+
+![Hybrid Chat Tab](screenshots/image3.png)
+
+![Hybrid Chat Tab](screenshots/image4.png)
+
+![Hybrid Chat Tab](screenshots/image5.png)
 
 ---
 
